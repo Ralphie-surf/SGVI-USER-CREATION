@@ -1,5 +1,9 @@
 
-export class RolesService {}
+export class RolesService {
+    create(createRolesDto: CreateRolesDto): Promise<Roles> {
+        throw new Error('Method not implemented.');
+    }
+}
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
