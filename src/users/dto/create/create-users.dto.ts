@@ -18,41 +18,41 @@ export class CreateUsersDto extends CreateBaseAbstractDto{
     @IsNotEmpty()
     readonly gender: string
 
-    @IsNotEmpty()
+    
     readonly dateOfBirth: Date
 
-    @IsNotEmpty()
+    
     readonly isActive: boolean;
 
     @IsEmail()
     @IsNotEmpty()
     readonly primaryEmailAddress: string;
 
-    @IsNotEmpty()
+   
     readonly isPrimaryEmailAddressVerified: boolean;
 
-    @IsNotEmpty()
+    
     readonly passwordSalt: string;
 
-    @IsNotEmpty()
+    
     readonly passwordHash: string;
 
-    @IsNotEmpty()
+    
     readonly isPasswordChangeRequired: boolean;
 
-    @IsNotEmpty()
+    
     readonly resetPasswordToken: string;
    
-    @IsNotEmpty()
+    
     readonly resetPasswordExpiration: Date;
     
-    @IsNotEmpty()
+    
     readonly primaryEmailVerificationToken: string;
     
-    @IsNotEmpty()
+    
     readonly otpEnabled: boolean
     
-    @IsNotEmpty()
+    
     readonly otpSecret: string
     
     
