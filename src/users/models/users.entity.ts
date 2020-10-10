@@ -38,28 +38,28 @@ export class Users extends BaseAbstractEntity{
     @Column({nullable: true})
     isPrimaryEmailVerified: boolean
 
-    @Column({unique: true,nullable: true})
+    @Column()
     passwordSalt: string
 
-    @Column({unique: true,nullable: true})
+    @Column()
     passwordHash: string
 
     @Column({nullable: true})
     isPasswordChangeRequired: boolean
 
-    @Column({unique: true,nullable: true})
+    @Column()
     resetPasswordToken: string
 
     @Column({nullable: true})
     resetPasswordExpiration: Date
 
-    @Column({unique: true,nullable: true})
+    @Column()
     primaryEmailVerificationToken: string
 
     @Column({nullable: true})
     otpEnabled: boolean
 
-    @Column({unique: true,nullable: true})
+    @Column()
     otpSecret: string
 
     @Column({default: true ,nullable: true})

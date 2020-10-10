@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-
+import { UsersWithCount } from 'src/global/custom.interfaces';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult } from 'typeorm';
 import { CreateUsersDto } from './dto/create/create-users.dto';
@@ -72,8 +72,14 @@ export class UsersService {
     /**
      * find all and return only code and name along with customTheme relation
      */
-    async findAll(): Promise<Users[]> {
-        return await this.userRepository.find({select: ["id", "firstName"], relations: ["profile"]});
+    async findAllWithOptions(findOptions: string): Promise<UsersWithCount> {
+        const [users, count] = await this.userRepository.findAndCount(JSON.parse(findOptions));
+        return {users,count};
+    }
+
+    async findAll(): Promise<UsersWithCount> {
+        const [users, count] = await this.userRepository.findAndCount();
+        return {users, count}
     }
     
     //4. Etc. See https://typeorm.io/#/find-options
